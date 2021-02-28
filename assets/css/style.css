@@ -1,3 +1,4 @@
+/* ПРОБЛЕМА В 79 СТРОЧКЕ КОДА */
 .head a{
     font-size: 100%;
     color: #fff;
@@ -57,7 +58,7 @@ li.open a{
     color: #000;
     transition: 0.5s color;
 }
-.news h2, .action h2, .links h2{
+.news h2, .action h2{
     padding-left: 16px;
 }
 .news a, .action a, .links a{
@@ -76,7 +77,7 @@ a.btn{
     color: #c40000;
 }
 .actions, .actions .thumbnail{
-    width: 100%;
+    width: auto; /* Проблема с привязкой заголовка не к блоку, а к странице в этой строчке*/
     background-color: #A7C5BD;
 }
 .action .thumbnail p{
@@ -85,14 +86,21 @@ a.btn{
 .actions .thumbnail a{
     color: #000;
 }
+.actions img{
+    width: 589px;
+    height: 230px;
+}
 /* События */
 /* Ссылки */
+.links h2{
+    text-align: center;
+}
 .links h4{
     font: 16px 'Open Sans', Arial, sans-serif;
 	font-weight: 600;
 }
 .link .thumbnail{
-    width: 300px;
+    width: auto;
 }
 .link img{
     margin-top: 20px;
@@ -100,6 +108,8 @@ a.btn{
 .links{
     margin-bottom: 30px;
 }
+
+
 /* Ссылки */
 /* Школа в цифрах */
 .info, .info .thumbnail, .info .thumbnail h4, .info .thumbnail p{
@@ -217,13 +227,6 @@ a.btn{
     letter-spacing: .3px;
 }
 @media (max-width: 767px) {
-    .links h2{
-        padding-left: 0;
-        text-align: center;
-    }
-    .link .thumbnail{
-        width: 100%;
-    }
     .nav>li.dropdown>a{
         color: #fff;
     }
@@ -253,7 +256,7 @@ a.btn{
         font-size: 100%;
         font-weight: 500;
     }
-} 
+}
 /* Анимации */
 .news a:hover, .links a:hover{
     color: #c40000;
